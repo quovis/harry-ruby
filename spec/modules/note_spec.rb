@@ -5,6 +5,34 @@ class Dummy
 end
 
 describe Note do 
+
+  describe "instance methods" do
+    before(:each) { @note = Dummy.new }
+    [
+      'longa', 'doublewhole', 'whole', 'half', 
+      'quarter', 'eighth', 'sixteenth', 'thirty-second', 
+      'sixty-fourth', 'hundred-twenty-eighth'
+    ].each do |value|
+      describe value do
+        before(:each) { @note.send(value) }
+        it("sets value to #{value}") { @note.value.should eq(value) }
+      end
+    end
+  end
+
+  describe "class methods" do
+    [
+      'longa', 'doublewhole', 'whole', 'half', 
+      'quarter', 'eighth', 'sixteenth', 'thirty-second', 
+      'sixty-fourth', 'hundred-twenty-eighth'
+    ].each do |value|
+      describe value do
+        before(:each) { @note = Dummy.send(value) }
+        it("sets value to #{value}") { @note.value.should eq(value) }
+      end
+    end
+  end
+  
   describe "members" do
     before(:each) do
       @note = Dummy.new
@@ -15,7 +43,7 @@ describe Note do
       { :name => "octave", :value => 1 },
       { :name => "accidental", :value => '#' },
       { :name => "dotted", :value => true },
-      
+      { :name => "value", :value => 'quarter' },
     ].each do |member|
       describe member[:name] do
         before(:each) do
