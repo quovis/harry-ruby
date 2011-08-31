@@ -1,4 +1,3 @@
+require "modules/note.rb"
+
 require "core/sequencer.rb"
-class HarryRuby
-  
-end
