@@ -12,7 +12,7 @@ module Note
     'quarter', 'eighth', 'sixteenth', 'thirty-second', 
     'sixty-fourth', 'hundred-twenty-eighth'
   ].each do |value|
-    define_method(value.to_sym) { self.value = value; value }
+    define_method(value.to_sym) { self.value = value; self }
   end
 
   #####################################################################

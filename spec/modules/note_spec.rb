@@ -14,8 +14,9 @@ describe Note do
       'sixty-fourth', 'hundred-twenty-eighth'
     ].each do |value|
       describe value do
-        before(:each) { @note.send(value) }
+        before(:each) { @result = @note.send(value) }
         it("sets value to #{value}") { @note.value.should eq(value) }
+        it("returns the object") { @result.should eq(@note) }
       end
     end
   end
