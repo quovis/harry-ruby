@@ -1,6 +1,6 @@
 = harry-ruby
 
-Description goes here.
+harry-ruby is a music composition library written in ruby
 
 == Contributing to harry-ruby
  
