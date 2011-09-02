@@ -1,12 +1,7 @@
-["A", "B", "C", "D", "E", "F", "G"].each do |pitch|
-  # Create the class
-  klass = Object.const_set(pitch, Class.new)
-  
-  # Include Note module
-  klass.send(:include, Note)
-  
-  # Set the pitch
-  klass.send(:define_method, "initialize") do
-    self.pitch = pitch
+module Harry
+  ["A", "B", "C", "D", "E", "F", "G"].each do |pitch|
+    send(:define_method, pitch.to_sym) do |octave|
+      Note.new({:pitch => pitch, :octave => octave})
+    end
   end
 end

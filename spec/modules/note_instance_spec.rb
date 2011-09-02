@@ -1,11 +1,13 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 class Dummy
-  include Note
+  include NoteInstance
 end
 
-describe Note do 
-
+describe NoteInstance do 
+  #####################################################################
+  # Instance Methods
+  #####################################################################
   describe "instance methods" do
     before(:each) { @note = Dummy.new }
     [
@@ -19,9 +21,30 @@ describe Note do
         it("returns the object") { @result.should eq(@note) }
       end
     end
+
+    [ 'flat', 'normal', 'sharp' ].each do |value|
+      describe value do
+        before(:each) { @result = @note.send(value) }
+        it("sets accidental to #{value}") { @note.accidental.should eq(value) }
+        it("returns the object") { @result.should eq(@note) }
+      end
+    end
+    
+    # Dots
+    describe "dots" do
+      before(:each) { @result = @note.dots(1) }
+      it("sets dots to 1") { @note.dots.should eq(1) }
+      it("returns the object") { @result.should eq(@note) }
+    end
+    
   end
 
+  #####################################################################
+  # Class Methods
+  #####################################################################
   describe "class methods" do
+
+    # Value (duration)
     [
       'longa', 'doublewhole', 'whole', 'half', 
       'quarter', 'eighth', 'sixteenth', 'thirty-second', 
@@ -31,6 +54,20 @@ describe Note do
         before(:each) { @note = Dummy.send(value) }
         it("sets value to #{value}") { @note.value.should eq(value) }
       end
+    end
+    
+    # Accidental
+    [ 'flat', 'normal', 'sharp' ].each do |value|
+      describe value do
+        before(:each) { @note = Dummy.send(value) }
+        it("sets accidental to #{value}") { @note.accidental.should eq(value) }
+      end
+    end
+    
+    # Dots
+    describe "dots" do
+      before(:each) { @note = Dummy.dots(1) }
+      it("sets dots to 1") { @note.dots.should eq(1) }
     end
   end
   
@@ -43,7 +80,6 @@ describe Note do
       { :name => "pitch", :value => "C" },
       { :name => "octave", :value => 1 },
       { :name => "accidental", :value => '#' },
-      { :name => "dotted", :value => true },
       { :name => "value", :value => 'quarter' },
     ].each do |member|
       describe member[:name] do

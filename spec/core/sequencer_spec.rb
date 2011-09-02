@@ -1,5 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
-
+  
 describe Sequencer do
   context "being instantiated" do
     context "with 120bpm" do

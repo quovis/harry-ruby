@@ -1,6 +1,6 @@
 # Sequencer is the root class for handling composition
 
-class Sequencer
+class Harry::Sequencer
   #####################################################################
   # Instance Methods
   #####################################################################
