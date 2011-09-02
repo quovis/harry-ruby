@@ -8,5 +8,18 @@ describe Harry::Note do
       it('shuld set octave correctly') { @note.octave.should eq(3) }
     end
   end
+  
+  describe "NOTE(octave) constructors:" do 
+    ["A", "B", "C", "D", "E", "F", "G"].each do |note|
+      describe "#{note}" do
+        before(:each) do
+          @note = send(note, 1)
+        end
+        it("sets the pitch correctly"){ @note.pitch.should eq(note) }
+        it("sets the octave correctly"){ @note.octave.should eq(1) }
+      end
+    end
+  end
+  
 end
 
