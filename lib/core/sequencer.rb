@@ -1,4 +1,4 @@
-# Sequencer is the root class for handling composition
+# Sequencer is a class given to group notes.
 
 class Harry::Sequencer
   #####################################################################

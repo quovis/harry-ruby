@@ -1,0 +1,54 @@
+ROADMAP
+=======
+[ p (pending) | c (complete) | h (partially completed) ]
+0.1.0
+-----
+	h Notes
+		c define pitch, octave, accidental, value and dots
+		c define + and - steps
+		
+	- Scale
+		c Ability to create scales and parse its notes from intervals
+		p Implement scales from fcomposer
+		p Implement scales from http://en.wikipedia.org/wiki/List_of_musical_scales_and_modes
+		p Create generators using ScaleName('Tonic') ex. Major('C')
+		p JSON definition for custom scales
+
+	h Sequencer
+		c Set bpm's, time signature
+		p Ability to queue notes and silences
+		
+	p MIDI
+		p define abstract midi implementation
+		p define to_midi for notes
+		p define to_midi for sequencer
+		p define to_seconds to transform from a value to its correlative in seconds (using bpm) - ABSTRACT VALUE TO CLASS
+		p add velocity support to Note
+		p Jack MIDI 
+		p Alsa MIDI 
+		
+0.2.0
+-----
+	- Note Algebra
+		1) + and - for notes
+		2) * and / for notes
+	- Output
+		- Staff printed
+		- Staff on screen
+		- Staff on HTML
+	
+0.3.0
+-----
+	- Basic Harmony
+	
+0.4.0
+-----
+	- Harmony Algebra
+
+0.5.0
+-----
+	- Real Time
+	
+1.0.0
+-----
+	Graphic interface

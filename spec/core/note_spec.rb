@@ -11,7 +11,7 @@ describe Harry::Note do
   
   describe "NOTE(octave) constructors:" do 
     ["A", "B", "C", "D", "E", "F", "G"].each do |note|
-      describe "#{note}" do
+      describe "#{note}()" do
         before(:each) do
           @note = send(note, 1)
         end
