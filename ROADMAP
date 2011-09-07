@@ -3,9 +3,10 @@ ROADMAP
 [ p (pending) | c (complete) | h (partially completed) ]
 0.1.0
 -----
-	h Notes
-		c define pitch, octave, accidental, value and dots
+	c Notes
+		c define pitch, octave, accidental, value, dots and constructors
 		c define + and - steps
+		p Documentation
 		
 	- Scale
 		c Ability to create scales and parse its notes from intervals
@@ -13,6 +14,7 @@ ROADMAP
 		p Implement scales from http://en.wikipedia.org/wiki/List_of_musical_scales_and_modes
 		p Create generators using ScaleName('Tonic') ex. Major('C')
 		p JSON definition for custom scales
+		p Documentation
 
 	h Sequencer
 		c Set bpm's, time signature

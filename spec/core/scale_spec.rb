@@ -1,13 +1,14 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe Scale do 
+describe Harry::Scale do 
+
   describe "instance methods:" do
     describe "parse_intervals" do
       before(:each) do
         @scale = Scale.new
         @intervals = [2,2,1,2,2,2]
-        @scale.intervals = @intervals
         @scale.tonic = C()
+        @scale.intervals = @intervals
         @scale.parse_intervals
       end
       it("should update the notes") { @scale.notes.map { |n| n.name }.should eq(["C","D","E","F","G","A","B"]) }
@@ -20,8 +21,9 @@ describe Scale do
     describe "intervals" do
       before(:each) do
         @intervals = [2,2,1,2,2,2]
-        @scale.intervals = @intervals
         @scale.tonic = C()
+        @scale.should_receive(:parse_intervals)
+        @scale.intervals = @intervals
       end
       it("assigns interval") { @scale.intervals.should eq(@intervals) }
     end
