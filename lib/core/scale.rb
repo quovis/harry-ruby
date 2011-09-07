@@ -2,8 +2,8 @@ class Harry::Scale
   attr_accessor :intervals, :tonic, :notes
   @notes = []
 
-  def initialize(options = { :tonic => C(), :intervals => nil})
-    self.tonic = options[:tonic]
+  def initialize(options = {})
+    self.tonic = options[:tonic] if options[:tonic]
     self.intervals = options[:intervals] if intervals
     set_intervals
   end

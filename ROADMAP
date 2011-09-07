@@ -7,13 +7,16 @@ ROADMAP
 		c define pitch, octave, accidental, value, dots and constructors
 		c define + and - steps
 		p Documentation
-		
+		p Note Algebra
+  		p + and - for notes
+  		p * and / for notes
+  	p Define silence note
+  	
 	- Scale
 		c Ability to create scales and parse its notes from intervals
-		p Implement scales from fcomposer
+		c Implement scales from fcomposer
+		c Create generators using ScaleName('Tonic') ex. Major('C')
 		p Implement scales from http://en.wikipedia.org/wiki/List_of_musical_scales_and_modes
-		p Create generators using ScaleName('Tonic') ex. Major('C')
-		p JSON definition for custom scales
 		p Documentation
 
 	h Sequencer
@@ -31,14 +34,14 @@ ROADMAP
 		
 0.2.0
 -----
-	- Note Algebra
-		1) + and - for notes
-		2) * and / for notes
 	- Output
 		- Staff printed
 		- Staff on screen
 		- Staff on HTML
-	
+	- Scales
+	  p JSON definition for custom scales
+		p Migrate existing scales to JSON
+		
 0.3.0
 -----
 	- Basic Harmony

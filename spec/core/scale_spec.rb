@@ -9,10 +9,8 @@ describe Harry::Scale do
         @intervals = [2,2,1,2,2,2]
         @scale.tonic = C()
         @scale.intervals = @intervals
-        @scale.parse_intervals
       end
       it("should update the notes") { @scale.notes.map { |n| n.name }.should eq(["C","D","E","F","G","A","B"]) }
-      
     end
   end
   describe "members:" do
@@ -33,7 +31,7 @@ describe Harry::Scale do
         @tonic = C()
         @scale.tonic = @tonic
       end
-      it("assigns notes") { @scale.tonic.should eq(@tonic) }
+      it("assigns tonic") { @scale.tonic.should eq(@tonic) }
     end
 
     describe "notes" do
