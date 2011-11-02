@@ -21,5 +21,10 @@ describe Harry::Note do
     end
   end
   
+  describe "Silence" do
+    it("is a note") { silence.class.should eq(Note) }
+    it("has no pitch") { silence.pitch.should eq(nil) }
+    it("has no octave") { silence.octave.should eq(nil) }
+  end
 end
 

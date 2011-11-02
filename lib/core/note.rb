@@ -2,7 +2,7 @@ module Harry
   class Note
     include NoteInstance
 
-    def initialize(options = { :pitch => '', :octave => nil })
+    def initialize(options = { :pitch => nil, :octave => nil })
       self.pitch = options[:pitch]
       self.octave = options[:octave]
     end
@@ -15,5 +15,9 @@ module Harry
     send(:define_method, pitch.to_sym) do |*args|
       Note.new({:pitch => pitch, :octave => args[0]})
     end
+  end
+  
+  def silence
+    Note.new
   end
 end
