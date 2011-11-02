@@ -14,7 +14,7 @@ harry-ruby is a music composition library written in ruby
 
 == Usage
 === Notes
-	TODO
+	check examples/notes.rb
 === Scales
   TODO
 
